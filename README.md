@@ -10,7 +10,7 @@
 
 ### Installation
 ```
-composer create-project xiewulong/yii2-app myapp
+composer create-project xiewulong/yii2-app Appname
 ```
 
 

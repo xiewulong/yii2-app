@@ -1,6 +1,20 @@
 # Yii 2 Project Template
 
-### DIRECTORY STRUCTURE
+
+
+### Requirements
+*	composer
+
+
+
+### Installation
+```
+composer create-project xiewulong/yii2-app myapp
+```
+
+
+
+### Directory structure
 ```
 apps                     contains webapps
     backend/

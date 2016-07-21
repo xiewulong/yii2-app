@@ -3,7 +3,8 @@
 
 
 ### Requirements
-*	composer
+*	[Composer](https://getcomposer.org/doc/00-intro.md)
+*	[Composer Asset Plugin](https://github.com/fxpio/composer-asset-plugin)
 
 
 

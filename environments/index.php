@@ -29,37 +29,37 @@
  * ```
  */
 return [
+    'Production' => [
+        'path' => 'prod',
+        'setWritable' => [
+            'apps/backend/runtime',
+            'apps/ackend/web/assets',
+            'apps/frontend/runtime',
+            'apps/frontend/web/assets',
+        ],
+        'setExecutable' => [
+            'yii',
+        ],
+        'setCookieValidationKey' => [
+            'apps/backend/config/main-local.php',
+            'apps/frontend/config/main-local.php',
+        ],
+    ],
     'Development' => [
         'path' => 'dev',
         'setWritable' => [
-            'backend/runtime',
-            'backend/web/assets',
-            'frontend/runtime',
-            'frontend/web/assets',
+            'apps/backend/runtime',
+            'apps/backend/web/assets',
+            'apps/frontend/runtime',
+            'apps/frontend/web/assets',
         ],
         'setExecutable' => [
             'yii',
             'tests/codeception/bin/yii',
         ],
         'setCookieValidationKey' => [
-            'backend/config/main-local.php',
-            'frontend/config/main-local.php',
-        ],
-    ],
-    'Production' => [
-        'path' => 'prod',
-        'setWritable' => [
-            'backend/runtime',
-            'backend/web/assets',
-            'frontend/runtime',
-            'frontend/web/assets',
-        ],
-        'setExecutable' => [
-            'yii',
-        ],
-        'setCookieValidationKey' => [
-            'backend/config/main-local.php',
-            'frontend/config/main-local.php',
+            'apps/backend/config/main-local.php',
+            'apps/frontend/config/main-local.php',
         ],
     ],
 ];

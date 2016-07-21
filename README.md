@@ -1,7 +1,6 @@
 # Yii 2 Project Template
 
 ### DIRECTORY STRUCTURE
-
 ```
 apps                     contains webapps
     backend/

@@ -2,6 +2,7 @@
 
 namespace backend\assets;
 
+use Yii;
 use yii\web\AssetBundle;
 
 /**

@@ -10,4 +10,9 @@ class Controller extends \yii\web\Controller {
 		parent::init();
 	}
 
+	public function respond($response = null, $format = \yii\web\Response::FORMAT_JSON) {
+		\Yii::$app->response->format = $format;
+		return $response;
+	}
+
 }

@@ -20,10 +20,10 @@ return [
 			// 'showScriptName' => false,
 			// 'enablePrettyUrl' => true,
 		],
+		/*
 		'authManager' => [
 			'class' => 'yii\rbac\DbManager',
 		],
-		/*
 		'i18n' => [
 			'translations' => [
 				'common' => [

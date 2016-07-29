@@ -1,77 +1,58 @@
 <?php
+$env = [
+	// list of files that should only copied once and skipped if they already exist
+	'skipFiles' => [],
 
-/**
-* The manifest of files that are local to specific environment.
-* This file returns a list of environments that the application
-* may be installed under. The returned data must be in the following
-* format:
-*
-* ```php
-* return [
-*     'environment name' => [
-*         'path' => 'directory storing the local files',
-*         'skipFiles'  => [
-*             // list of files that should only copied once and skipped if they already exist
-*         ],
-*         'setWritable' => [
-*             // list of directories that should be set writable
-*         ],
-*         'setExecutable' => [
-*             // list of files that should be set executable
-*         ],
-*         'setCookieValidationKey' => [
-*             // list of config files that need to be inserted with automatically generated cookie validation keys
-*         ],
-*         'createSymlink' => [
-*             // list of symlinks to be created. Keys are symlinks, and values are the targets.
-*         ],
-*     ],
-* ];
-* ```
-*/
-
-return [
-	'Production' => [
-		'path' => 'prod',
-		'skipFiles' => [],
-		'setWritable' => [
-			'apps/backend/runtime',
-			'apps/ackend/web/assets',
-			'apps/frontend/runtime',
-			'apps/frontend/web/assets',
-			'services/api/runtime',
-			'services/api/web/assets',
-		],
-		'setExecutable' => [
-			'yii',
-		],
-		'setCookieValidationKey' => [
-			'apps/backend/config/main-local.php',
-			'apps/frontend/config/main-local.php',
-			'services/api/config/main-local.php',
-		],
-		'createSymlink' => [],
+	// list of directories that should be set writable
+	'setWritable' => [
+		'apps/backend/runtime',
+		'apps/backend/web/assets',
+		'apps/frontend/runtime',
+		'apps/frontend/web/assets',
+		'services/api/runtime',
+		'services/api/web/assets',
 	],
-	'Development' => [
-		'path' => 'dev',
-		'skipFiles' => [],
-		'setWritable' => [
-			'apps/backend/runtime',
-			'apps/backend/web/assets',
-			'apps/frontend/runtime',
-			'apps/frontend/web/assets',
-			'services/api/runtime',
-			'services/api/web/assets',
-		],
-		'setExecutable' => [
-			'yii',
-			'tests/codeception/bin/yii',
-		],
-		'setCookieValidationKey' => [
-			'apps/backend/config/main-local.php',
-			'apps/frontend/config/main-local.php',
-			'services/api/config/main-local.php',
-		],
-		'createSymlink' => [],
+
+	// list of files that should be set executable
+	'setExecutable' => [
+		'yii',
+	],
+
+	// list of config files that need to be inserted with automatically generated cookie validation keys
+	'setCookieValidationKey' => [
+		'apps/backend/config/main-local.php',
+		'apps/frontend/config/main-local.php',
+		'services/api/config/main-local.php',
+	],
+
+	// list of symlinks to be created. Keys are symlinks, and values are the targets
+	'createSymlink' => [
+		// 'console/migrations/m140506_102106_rbac_init.php' => 'vendor/yiisoft/yii2/rbac/migrations/m140506_102106_rbac_init.php',
+		// 'console/migrations/m141106_185632_log_init.php' => 'vendor/yiisoft/yii2/log/migrations/m141106_185632_log_init.php',
+		// 'console/migrations/m150207_210500_i18n_init.php' => 'vendor/yiisoft/yii2/i18n/migrations/m150207_210500_i18n_init.php',
+		// 'console/migrations/m150909_153426_cache_init.php' => 'vendor/yiisoft/yii2/caching/migrations/m150909_153426_cache_init.php',
+		// 'console/migrations/m160313_153426_session_init.php' => 'vendor/yiisoft/yii2/web/migrations/m160313_153426_session_init.php',
 	],
 ];
+
+$_envs = [
+	'Production' => 'prod',
+	'Development' => 'dev',
+];
+
+$envs = [];
+foreach($_envs as $name => $path) {
+	$_env = $env;
+
+	// directory storing the local files
+	$_env['path'] = $path;
+
+	// set special enviroments
+	if(in_array($name, ['Development'])) {
+		$_env['setExecutable'][] = 'tests/codeception/bin/yii';
+	}
+
+	$envs[$name] = $_env;
+}
+
+return $envs;

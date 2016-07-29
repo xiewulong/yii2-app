@@ -10,7 +10,7 @@ use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
 use yii\web\NotFoundHttpException;
-use common\forms\LoginForm;
+use common\models\LoginForm;
 use backend\components\Controller;
 
 class DashboardController extends Controller {

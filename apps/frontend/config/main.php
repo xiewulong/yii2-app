@@ -9,6 +9,8 @@ $params = array_merge(
 
 return [
 	'id' => 'app-frontend',
+	'name' => 'frontend',
+	// 'version' => '1.0',
 	'basePath' => dirname(__DIR__),
 	'controllerNamespace' => 'frontend\controllers',
 	'defaultRoute' => 'home',
@@ -37,8 +39,13 @@ return [
 			],
 		],
 		'errorHandler' => [
-		'errorAction' => 'home/error',
+			'errorAction' => 'home/error',
 		],
+		/*
+		'controller' => [
+			'defaultAction' => 'index',
+		],
+		*/
 	],
 	'modules' => [],
 	'params' => $params,

@@ -9,6 +9,8 @@ $params = array_merge(
 
 return [
 	'id' => 'console',
+	'name' => 'console',
+	// 'version' => '1.0',
 	'basePath' => dirname(__DIR__),
 	'bootstrap' => ['log'],
 	'controllerNamespace' => 'console\controllers',
@@ -21,6 +23,11 @@ return [
 				],
 			],
 		],
+		/*
+		'controller' => [
+			'defaultAction' => 'index',
+		],
+		*/
 	],
 	'params' => $params,
 ];

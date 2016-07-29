@@ -1,6 +1,10 @@
 <?php
 
 return [
+	// 'charset' => 'utf-8',
+	// 'timeZone' => 'PRC',
+	// 'language' => 'zh-cn',
+	// 'layout' => 'main',
 	'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
 	'components' => [
 		'db' => [
@@ -28,10 +32,10 @@ return [
 				],
 			],
 		],
+		'view' => [
+			'defaultExtension' => 'html',
+		],
 		*/
 	],
-	'charset' => 'utf-8',
-	// 'timeZone' => 'PRC',
-	// 'language' => 'zh-cn',
-	'version' => '0.0.1',
+	'modules' => [],
 ];

@@ -1,5 +1,4 @@
 <?php
-
 namespace tests\codeception\backend\unit;
 
 class DbTestCase extends \yii\codeception\DbTestCase

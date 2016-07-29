@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Application configuration for frontend unit tests
  */

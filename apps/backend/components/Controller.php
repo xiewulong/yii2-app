@@ -1,5 +1,4 @@
 <?php
-
 namespace backend\components;
 
 use Yii;

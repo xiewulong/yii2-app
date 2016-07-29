@@ -1,5 +1,4 @@
 <?php
-
 namespace tests\codeception\frontend\functional;
 
 use tests\codeception\frontend\_pages\SignupPage;

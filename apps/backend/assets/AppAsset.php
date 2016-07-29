@@ -1,5 +1,4 @@
 <?php
-
 namespace backend\assets;
 
 use Yii;

@@ -1,5 +1,4 @@
 <?php
-
 namespace tests\codeception\backend\functional;
 
 use tests\codeception\backend\FunctionalTester;

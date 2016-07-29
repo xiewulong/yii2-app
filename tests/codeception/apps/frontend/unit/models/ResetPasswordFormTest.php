@@ -1,5 +1,4 @@
 <?php
-
 namespace tests\codeception\frontend\unit\models;
 
 use tests\codeception\frontend\unit\DbTestCase;

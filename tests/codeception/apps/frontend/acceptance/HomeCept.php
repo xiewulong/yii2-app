@@ -1,5 +1,4 @@
 <?php
-
 namespace tests\codeception\frontend\acceptance;
 
 use Yii;

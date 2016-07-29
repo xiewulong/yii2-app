@@ -1,5 +1,4 @@
 <?php
-
 namespace tests\codeception\backend\acceptance;
 
 use tests\codeception\backend\AcceptanceTester;

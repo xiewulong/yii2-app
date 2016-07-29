@@ -1,5 +1,4 @@
 <?php
-
 return [
 	'language' => 'en-US',
 	'controllerMap' => [

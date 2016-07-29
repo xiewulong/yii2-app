@@ -1,5 +1,4 @@
 <?php
-
 return [
 	// 'charset' => 'utf-8',
 	// 'timeZone' => 'PRC',

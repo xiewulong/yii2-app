@@ -2,7 +2,8 @@
 return [
 	// 'charset' => 'utf-8',
 	// 'timeZone' => 'PRC',
-	// 'language' => 'zh-cn',
+	// 'language' => 'zh-CN',
+	// 'sourceLanguage' => 'en-US',
 	// 'layout' => 'main',
 	'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
 	'components' => [
@@ -28,6 +29,16 @@ return [
 				'common' => [
 					'class' => 'yii\i18n\PhpMessageSource',
 					'basePath' => '@common/messages',
+					// 'sourceLanguage' => 'en-US',
+				],
+				'common*' => [
+					'class' => 'yii\i18n\PhpMessageSource',
+					'basePath' => '@common/messages',
+					// 'sourceLanguage' => 'en-US',
+					'fileMap' => [
+						'common' => 'common.php',
+						'common/error' => 'error.php',
+					],
 				],
 			],
 		],

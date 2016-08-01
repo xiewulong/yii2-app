@@ -38,7 +38,7 @@ return [
 			],
 		],
 		'errorHandler' => [
-			'errorAction' => 'home/error',
+			'errorAction' => 'dashboard/error',
 		],
 		/*
 		'controller' => [

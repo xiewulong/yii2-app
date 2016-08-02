@@ -1,5 +1,6 @@
 <?php
 return [
+	// 'version' => '1.0',
 	// 'charset' => 'utf-8',
 	// 'timeZone' => 'PRC',
 	// 'language' => 'zh-CN',

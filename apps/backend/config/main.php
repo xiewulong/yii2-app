@@ -8,7 +8,6 @@ $params = array_merge(
 
 return [
 	'id' => 'app-backend',
-	'name' => 'backend',
 	// 'version' => '1.0',
 	'basePath' => dirname(__DIR__),
 	'controllerNamespace' => 'backend\controllers',
@@ -23,10 +22,11 @@ return [
 			'enableAutoLogin' => false,
 			'identityCookie' => ['name' => '_identity', 'httpOnly' => true],
 			'loginUrl' => ['dashboard/login'],
+			'authTimeout' => 60 * 60,
 		],
 		'session' => [
-			// this is the name of the session cookie used for login on the backend
 			'name' => 'backend',
+			'timeout' => 60 * 60,
 		],
 		'log' => [
 			'traceLevel' => YII_DEBUG ? 3 : 0,

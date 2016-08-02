@@ -8,7 +8,6 @@ $params = array_merge(
 
 return [
 	'id' => 'app-frontend',
-	'name' => 'frontend',
 	// 'version' => '1.0',
 	'basePath' => dirname(__DIR__),
 	'controllerNamespace' => 'frontend\controllers',
@@ -23,10 +22,11 @@ return [
 			'enableAutoLogin' => false,
 			'identityCookie' => ['name' => '_identity', 'httpOnly' => true],
 			'loginUrl' => ['home/login'],
+			'authTimeout' => 60 * 60,
 		],
 		'session' => [
-			// this is the name of the session cookie used for login on the frontend
 			'name' => 'frontend',
+			'timeout' => 60 * 60,
 		],
 		'log' => [
 			'traceLevel' => YII_DEBUG ? 3 : 0,

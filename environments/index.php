@@ -34,6 +34,7 @@ $env = [
 		// 'console/migrations/m160313_153426_session_init.php' => 'vendor/yiisoft/yii2/web/migrations/m160313_153426_session_init.php',
 
 		// 'console/migrations/m160731_032036_account_init.php' => 'vendor/xiewulong/yii2-account/migrations/m160731_032036_account_init.php',
+		// 'console/migrations/m160807_123425_cms_init.php' => 'vendor/xiewulong/yii2-cms/migrations/m160807_123425_cms_init.php',
 	],
 ];
 

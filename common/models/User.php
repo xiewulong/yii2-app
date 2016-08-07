@@ -4,8 +4,8 @@ namespace common\models;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
+use yii\components\ActiveRecord;
 use yii\web\IdentityInterface;
-use common\components\ActiveRecord;
 
 /**
  * User model

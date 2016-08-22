@@ -52,7 +52,7 @@ foreach($_envs as $name => $path) {
 
 	// set special enviroments
 	if(in_array($name, ['Development'])) {
-		$_env['setExecutable'][] = 'tests/codeception/bin/yii';
+		// $_env['setExecutable'][] = 'tests/codeception/bin/yii';
 	}
 
 	$envs[$name] = $_env;

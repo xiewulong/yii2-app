@@ -61,7 +61,5 @@ services                 contains webservices
         models/          contains api-specific model classes
         runtime/         contains files generated during runtime
         web/             contains the entry script and Web resources
-tests                    contains various tests for the advanced application
-    codeception/         contains tests developed with Codeception PHP Testing Framework
 vendor/                  contains dependent 3rd-party packages
 ```

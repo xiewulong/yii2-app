@@ -47,6 +47,9 @@ return [
 		*/
 	],
 	'modules' => [
+		'account' => [
+			'class' => 'yii\account\Module',
+		],
 		'site' => [
 			'class' => 'yii\cms\FrontendModule',
 		],

@@ -18,10 +18,10 @@
         "yiisoft/yii2": ">=2.0.6",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
-        "yiisoft/yii2-account": "*",
-        "yiisoft/yii2-cms": "*",
-        "yiisoft/yii2-components": "*",
-        "yiisoft/yii2-xui": "*"
+        "xiewulong/yii2-account": "*",
+        "xiewulong/yii2-cms": "*",
+        "xiewulong/yii2-components": "*",
+        "xiewulong/yii2-xui": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

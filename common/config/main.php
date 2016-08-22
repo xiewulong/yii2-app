@@ -47,6 +47,10 @@ return [
 			'defaultExtension' => 'html',
 		],
 		*/
+		'fileupload' => [
+			'class' => 'yii\fileupload\Manager',
+			'timepath' => true,
+		],
 	],
 	'modules' => [],
 ];

@@ -1,14 +1,14 @@
 <?php
-namespace frontend\controllers;
+namespace api\controllers;
 
-use yii\base\ActionEvent;
+use Yii;
 use yii\data\Pagination;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
-use yii\web\BadRequestHttpException;
-use frontend\components\Controller;
+use yii\web\NotFoundHttpException;
+use api\components\Controller;
 
 class HomeController extends Controller {
 

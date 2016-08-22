@@ -11,17 +11,17 @@ return [
 	// 'version' => '1.0',
 	'basePath' => dirname(__DIR__),
 	'controllerNamespace' => 'frontend\controllers',
-	'defaultRoute' => 'home',
+	'defaultRoute' => 'site',
 	'bootstrap' => ['log'],
 	'components' => [
 		'request' => [
 			'csrfParam' => '_csrf',
 		],
 		'user' => [
-			'identityClass' => 'common\models\User',
+			'identityClass' => 'yii\account\models\User',
 			'enableAutoLogin' => false,
 			'identityCookie' => ['name' => '_identity', 'httpOnly' => true],
-			'loginUrl' => ['home/login'],
+			'loginUrl' => ['account/user/login'],
 			'authTimeout' => 60 * 60,
 		],
 		'session' => [
@@ -38,7 +38,7 @@ return [
 			],
 		],
 		'errorHandler' => [
-			'errorAction' => 'home/error',
+			'errorAction' => 'site/home/error',
 		],
 		/*
 		'controller' => [
@@ -46,6 +46,10 @@ return [
 		],
 		*/
 	],
-	'modules' => [],
+	'modules' => [
+		'site' => [
+			'class' => 'yii\cms\FrontendModule',
+		],
+	],
 	'params' => $params,
 ];

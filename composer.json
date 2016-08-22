@@ -19,6 +19,7 @@
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
         "yiisoft/yii2-account": "*",
+        "yiisoft/yii2-cms": "*",
         "yiisoft/yii2-components": "*",
         "yiisoft/yii2-xui": "*"
     },

@@ -2,76 +2,20 @@
 namespace backend\controllers;
 
 use Yii;
-use yii\base\ActionEvent;
 use yii\data\Pagination;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
 use yii\web\NotFoundHttpException;
-use common\models\LoginForm;
 use backend\components\Controller;
 
 class DashboardController extends Controller {
 
 	//public $defaultAction = 'list';
 
-    public function behaviors() {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'actions' => ['login', 'error'],
-                        'allow' => true,
-                    ],
-                    [
-                        'actions' => ['logout', 'index'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
-            ],
-        ];
-    }
-
-    public function actions() {
-        return [
-            'error' => [
-                'class' => 'yii\web\ErrorAction',
-            ],
-        ];
-    }
-
-    public function actionIndex() {
-        return $this->render('index');
-    }
-
-    public function actionLogin() {
-        if(!\Yii::$app->user->isGuest) {
-            return $this->goHome();
-        }
-
-        $model = new LoginForm();
-        if($model->load(\Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
-        } else {
-            return $this->render('login', [
-                'model' => $model,
-            ]);
-        }
-    }
-
-    public function actionLogout() {
-        \Yii::$app->user->logout();
-
-        return $this->goHome();
-    }
+	public function actionIndex() {
+		return $this->render($this->action->id);
+	}
 
 }

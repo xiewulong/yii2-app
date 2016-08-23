@@ -12,7 +12,34 @@ use backend\components\Controller;
 
 class DashboardController extends Controller {
 
-	//public $defaultAction = 'list';
+	//public $defaultAction = 'index';
+
+	public function behaviors() {
+		return [
+			'access' => [
+				'class' => AccessControl::className(),
+				'rules' => [
+					[
+						'actions' => ['index'],
+						'allow' => true,
+						'roles' => ['@'],
+					],
+				],
+			],
+		];
+	}
+
+	public function actions() {
+		return [
+			'error' => [
+				'class' => 'yii\web\ErrorAction',
+			],
+			'captcha' => [
+				'class' => 'yii\captcha\CaptchaAction',
+				'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
+			],
+		];
+	}
 
 	public function actionIndex() {
 		return $this->render($this->action->id);

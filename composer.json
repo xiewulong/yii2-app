@@ -19,7 +19,6 @@
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
         "xiewulong/yii2-account": "*",
-        "xiewulong/yii2-cms": "*",
         "xiewulong/yii2-components": "*",
         "xiewulong/yii2-xui": "*"
     },

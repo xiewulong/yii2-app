@@ -12,10 +12,10 @@ use api\components\Controller;
 
 class HomeController extends Controller {
 
-	// public $defaultAction = 'list';
+	// public $defaultAction = 'index';
 
-    public function actionIndex() {
-        return 'api';
-    }
+	public function actionIndex() {
+		return 'api';
+	}
 
 }

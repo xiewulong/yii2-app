@@ -11,7 +11,7 @@ return [
 	// 'version' => '1.0',
 	'basePath' => dirname(__DIR__),
 	'controllerNamespace' => 'frontend\controllers',
-	'defaultRoute' => 'site',
+	'defaultRoute' => 'home',
 	'bootstrap' => ['log'],
 	'components' => [
 		'request' => [
@@ -38,7 +38,7 @@ return [
 			],
 		],
 		'errorHandler' => [
-			'errorAction' => 'site/home/error',
+			'errorAction' => 'home/error',
 		],
 		/*
 		'controller' => [
@@ -49,9 +49,6 @@ return [
 	'modules' => [
 		'account' => [
 			'class' => 'yii\account\Module',
-		],
-		'site' => [
-			'class' => 'yii\cms\FrontendModule',
 		],
 	],
 	'params' => $params,

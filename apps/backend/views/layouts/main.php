@@ -4,68 +4,60 @@ use backend\assets\BackendAsset;
 
 BackendAsset::register($this);
 ?>
-<?php $this->beginPage() ?>
-<!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<?php $this->beginPage(); ?>
+<!doctype html>
+
+<!-- begin html -->
+<html lang="<?= \Yii::$app->language ?>" xml:lang="<?= \Yii::$app->language ?>">
+
+<!-- begin head -->
 <head>
-    <meta charset="<?= Yii::$app->charset ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
-    <?php $this->head() ?>
+<title><?= Html::encode($this->title) ?></title>
+<meta charset="<?= \Yii::$app->charset ?>" />
+<meta name="author" content="xiewulong<xiewulong@vip.qq.com>" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<!-- begin ie modes -->
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="renderer" content="webkit" />
+<!-- end ie modes -->
+
+<!-- begin mobile -->
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<!-- end mobile -->
+
+<!-- begin csrf -->
+<?= Html::csrfMetaTags() ?>
+<!-- end csrf -->
+
+<?php $this->head(); ?>
 </head>
+<!-- end head -->
+
+<!-- begin body -->
 <body>
-<?php $this->beginBody() ?>
+<?php $this->beginBody(); ?>
 
-<div class="wrap">
-    <?php
-    NavBar::begin([
-        'brandLabel' => 'My Company',
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
-    $menuItems = [
-        ['label' => 'Home', 'url' => ['/home/index']],
-    ];
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Login', 'url' => ['/home/login']];
-    } else {
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/home/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link']
-            )
-            . Html::endForm()
-            . '</li>';
-    }
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $menuItems,
-    ]);
-    NavBar::end();
-    ?>
+<?= $content ?>
 
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
-    </div>
-</div>
+<!-- begin admin-alerts -->
+<div class="admin-alerts J-admin-alerts"></div>
+<?php
+foreach(\Yii::$app->session->allFlashes as $flash) {
+	list($type, $message) = explode('|', $flash);
+	$this->registerJs('$.alert("' . addslashes($message) . '", "' . $type . '");', 3);
+}
+?>
+<!-- end admin-alerts -->
 
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
-    </div>
-</footer>
-
-<?php $this->endBody() ?>
+<?php $this->endBody(); ?>
 </body>
+<!-- end body -->
+
 </html>
-<?php $this->endPage() ?>
+<!-- end html -->
+<?php $this->endPage(); ?>

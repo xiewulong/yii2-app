@@ -18,7 +18,7 @@ return [
 			'csrfParam' => '_csrf',
 		],
 		'user' => [
-			'identityClass' => 'yii\account\models\User',
+			'identityClass' => 'common\models\User',
 			'enableAutoLogin' => false,
 			'identityCookie' => ['name' => '_identity', 'httpOnly' => true],
 			'loginUrl' => ['account/user/login'],

@@ -35,6 +35,7 @@ $env = [
 
 		'console/migrations/m160731_032036_account_init.php' => 'vendor/xiewulong/yii2-account/migrations/m160731_032036_account_init.php',
 		// 'console/migrations/m160807_123425_cms_init.php' => 'vendor/xiewulong/yii2-cms/migrations/m160807_123425_cms_init.php',
+		// 'console/migrations/m160827_055259_attachment_init.php' => 'vendor/xiewulong/yii2-attachment/migrations/m160827_055259_attachment_init.php',
 	],
 ];
 

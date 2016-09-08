@@ -26,6 +26,7 @@ composer.phar
 
 # phpunit itself is not needed
 phpunit.phar
+
 # local phpunit config
 /phpunit.xml
 
@@ -34,3 +35,10 @@ phpunit.phar
 
 # composer lock file
 composer.lock
+
+# nohup
+nohup.out
+
+# scss
+.sass-cache
+sass.out

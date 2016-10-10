@@ -2,20 +2,19 @@
 namespace common\assets;
 
 use Yii;
-use yii\xui\ControllerAsset;
+use yii\components\AssetBundle;
 
-class CommonAsset extends ControllerAsset {
+class CommonAsset extends AssetBundle {
 
-	public $css = [
-		'css/common.css',
-	];
+	public $basePath = '@webroot';
 
-	public $js = [
-		'js/common.js',
-	];
+	public $baseUrl = '@web';
 
-	public $depends = [
-		'yii\xui\BootstrapAsset',
-	];
+	public function init() {
+		parent::init();
+
+		$this->css[] = 'css/common' . $this->minimal . '.css';
+		$this->js[] = 'js/common' . $this->minimal . '.js';
+	}
 
 }

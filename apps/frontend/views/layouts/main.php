@@ -1,9 +1,9 @@
 <?php
 use yii\helpers\Html;
 use yii\xui\Statistics;
-use frontend\assets\FrontendAsset;
+use frontend\assets\ControllerAsset;
 
-FrontendAsset::register($this);
+ControllerAsset::register($this);
 ?>
 <?php $this->beginPage(); ?>
 <!doctype html>

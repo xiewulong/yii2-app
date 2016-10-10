@@ -1,8 +1,8 @@
 <?php
 use yii\helpers\Html;
-use backend\assets\BackendAsset;
+use backend\assets\ControllerAsset;
 
-BackendAsset::register($this);
+ControllerAsset::register($this);
 ?>
 <?php $this->beginPage(); ?>
 <!doctype html>

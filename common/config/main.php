@@ -48,5 +48,6 @@ return [
 		],
 		*/
 	],
-	'modules' => [],
+	'modules' => [
+	],
 ];

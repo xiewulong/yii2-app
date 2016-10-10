@@ -21,6 +21,8 @@
         "xiewulong/yii2-account": "*",
         "xiewulong/yii2-attachment": "*",
         "xiewulong/yii2-components": "*",
+        "xiewulong/yii2-payment": "*",
+        "xiewulong/yii2-wechat": "*",
         "xiewulong/yii2-xui": "*"
     },
     "require-dev": {

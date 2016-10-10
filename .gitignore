@@ -36,9 +36,6 @@ phpunit.phar
 # composer lock file
 composer.lock
 
-# nohup
-nohup.out
-
-# scss
-.sass-cache
-sass.out
+# node
+node_modules/
+npm-debug.log.*

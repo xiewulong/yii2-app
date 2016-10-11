@@ -49,6 +49,7 @@ return [
 	'modules' => [
 		'account' => [
 			'class' => 'yii\account\Module',
+			'identityClass' => 'common\models\User',
 		],
 	],
 	'params' => $params,

@@ -9,7 +9,7 @@ use yii\base\NotSupportedException;
  *
  * @since 0.0.1
  * @property {integer} $id
- * @property {string} $username
+ * @property {string} $name
  * @property {string} $email
  * @property {string} $mobile
  * @property {string} $password_hash
@@ -18,6 +18,7 @@ use yii\base\NotSupportedException;
  * @property {integer} $created_at
  * @property {integer} $updated_at
  *
+ * @property {string} $username
  * @property {string} $password
  * @property {string} $password_repeat
  * @property {string} $password_old

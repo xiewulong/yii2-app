@@ -12,7 +12,7 @@ use backend\components\Controller;
 
 class DashboardController extends Controller {
 
-	//public $defaultAction = 'index';
+	// public $defaultAction = 'index';
 
 	public function behaviors() {
 		return [

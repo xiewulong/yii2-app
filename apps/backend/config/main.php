@@ -22,7 +22,7 @@ return [
 			'enableAutoLogin' => false,
 			'identityCookie' => ['name' => '_identity', 'httpOnly' => true],
 			'loginUrl' => ['account/user/login'],
-			'authTimeout' => 60 * 60,
+			// 'authTimeout' => 60 * 60,
 		],
 		'session' => [
 			'name' => 'backend',

@@ -2,13 +2,15 @@
 namespace frontend\assets;
 
 use Yii;
+use yii\components\AssetBundle;
 
-class ControllerAsset extends \yii\xui\ControllerAsset {
+class AppAsset extends AssetBundle {
 
 	public $depends = [
 		'yii\xui\JqueryAsset',
 		'yii\xui\FontAwesomeAsset',
 		'common\assets\CommonAsset',
+		'yii\xui\ControllerAsset',
 	];
 
 }

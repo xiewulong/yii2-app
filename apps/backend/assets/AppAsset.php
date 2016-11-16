@@ -2,14 +2,16 @@
 namespace backend\assets;
 
 use Yii;
+use yii\components\AssetBundle;
 
-class ControllerAsset extends \yii\xui\ControllerAsset {
+class AppAsset extends AssetBundle {
 
 	public $depends = [
 		'yii\xui\BootstrapAsset',
 		'yii\xui\FontAwesomeAsset',
 		'yii\xui\AdminAsset',
 		'common\assets\CommonAsset',
+		'yii\xui\ControllerAsset',
 	];
 
 }

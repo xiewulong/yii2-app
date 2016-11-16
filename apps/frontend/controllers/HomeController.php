@@ -14,6 +14,21 @@ class HomeController extends Controller {
 
 	// public $defaultAction = 'index';
 
+	public function behaviors() {
+		return [
+			'access' => [
+				'class' => AccessControl::className(),
+				'rules' => [
+					[
+						'actions' => ['error', 'index'],
+						'allow' => true,
+						// 'roles' => ['@'],
+					],
+				],
+			],
+		];
+	}
+
 	public function actions() {
 		return [
 			'error' => [

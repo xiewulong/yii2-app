@@ -34,8 +34,11 @@ module.exports = {
 			},
 			{
 				test: /\.js$/,
-				exclude: /node_modules/,
 				loader: 'babel',
+			},
+			{
+				test: /\.(gif|jpg|png)$/,
+				loader: 'url-loader?limit=8192&name=../images/[name].[ext]',
 			},
 		],
 	},

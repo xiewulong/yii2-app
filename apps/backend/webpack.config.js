@@ -33,9 +33,12 @@ module.exports = {
 				loader: extractTextWebpackPlugin.extract('style-loader', 'css!postcss!sass'),
 			},
 			{
-				test: /\.js$/,
-				exclude: /node_modules/,
+				test: /\.js[x]?$/,
 				loader: 'babel',
+			},
+			{
+				test: /\.(gif|jpg|png)$/,
+				loader: 'url-loader?limit=8192&name=../images/[name].[ext]',
 			},
 		],
 	},

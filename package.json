@@ -8,8 +8,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "webpack --progress --colors -d -w",
-    "release": "webpack --progress --colors --display-error-details -p"
+    "start": "webpack --colors --progress -d -w",
+    "release": "webpack --colors --display-error-details --progress -p"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.1",

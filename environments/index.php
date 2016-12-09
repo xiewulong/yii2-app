@@ -38,6 +38,7 @@ $env = [
 		// 'console/migrations/m160827_055259_attachment_init.php' => 'vendor/xiewulong/yii2-attachment/migrations/m160827_055259_attachment_init.php',
 		// 'console/migrations/m161010_051207_wechat_init.php' => 'vendor/xiewulong/yii2-wechat/migrations/m161010_051207_wechat_init.php',
 		// 'console/migrations/m161010_051227_payment_init.php' => 'vendor/xiewulong/yii2-payment/migrations/m161010_051227_payment_init.php',
+		// 'console/migrations//m161209_094246_region_init.php' => 'vendor/xiewulong/yii2-account/migrations//m161209_094246_region_init.php',
 
 	],
 ];

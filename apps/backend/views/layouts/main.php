@@ -39,7 +39,7 @@ AppAsset::register($this);
 <!-- end head -->
 
 <!-- begin body -->
-<body>
+<body ontouchstart>
 <?php $this->beginBody(); ?>
 
 <?= $content ?>

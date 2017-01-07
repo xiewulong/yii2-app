@@ -25,7 +25,6 @@ return [
 			// 'authTimeout' => 60 * 60,
 		],
 		'session' => [
-			'name' => 'backend',
 			'timeout' => 60 * 60,
 		],
 		'log' => [

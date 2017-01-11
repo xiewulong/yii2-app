@@ -7,13 +7,14 @@
 const PATH = require('path');
 const FS = require('fs');
 const BASE_PATH = __dirname;
-const MIN = process.argv.indexOf('-p') >= 0 || process.argv.indexOf('--optimize-minimize') >= 0 ? '.min' : '';
+
+const PROD = process.argv.indexOf('-p') >= 0 || process.argv.indexOf('--optimize-minimize') >= 0;
+const ENV = PROD ? 'production' : 'development';
+const MIN = PROD ? '.min' : '';
 
 let webpack = require('webpack');
-let extractTextWebpackPlugin = require('extract-text-webpack-plugin');
-
-module.exports = {
-
+let webpackExtractTextPlugin = require('extract-text-webpack-plugin');
+let webpackConfig = {
 	entry: {
 		common: PATH.join(BASE_PATH, 'js', 'common'),
 		home: PATH.join(BASE_PATH, 'js', 'home'),
@@ -24,21 +25,32 @@ module.exports = {
 		filename: `[name]${MIN}.js`,
 	},
 
-	externals: {},
+	resolve: {
+		// extensions: ['.js', '.web.js', '.webpack.js'],
+	},
+
+	externals: {
+		// moduleName: 'importModuleName',
+	},
 
 	module: {
 		loaders: [
 			{
 				test: /\.scss$/,
-				loader: extractTextWebpackPlugin.extract('style-loader', 'css!postcss!sass'),
+				loader: webpackExtractTextPlugin.extract('style', 'css?sourceMap!postcss!sass?sourceMap'),
 			},
 			{
-				test: /\.js$/,
+				test: /\.js[x]?$/,
 				loader: 'babel',
+				exclude: /node_modules/,
 			},
 			{
 				test: /\.(gif|jpg|png)$/,
-				loader: 'url-loader?limit=8192&name=../images/[name].[ext]',
+				loader: 'url',
+				query: {
+					limit: 8192,
+					name: '../images/[name].[ext]',
+				},
 			},
 		],
 	},
@@ -48,7 +60,23 @@ module.exports = {
 	],
 
 	plugins: [
-		new extractTextWebpackPlugin(PATH.join('..', 'css', `[name]${MIN}.css`)),
+		new webpack.DefinePlugin({
+			'process.env': {
+				NODE_ENV: `'${ENV}'`,
+			},
+		}),
+		new webpack.optimize.OccurrenceOrderPlugin(),
+		new webpackExtractTextPlugin(PATH.join('..', 'css', `[name]${MIN}.css`))
 	],
-
 };
+
+if(PROD) {
+	webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({
+		compress: {
+			warnings: false,
+		},
+		sourceMap: true,
+	}));
+}
+
+module.exports = webpackConfig;

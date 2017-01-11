@@ -7,23 +7,22 @@
 const PATH = require('path');
 const FS = require('fs');
 const BASE_PATH = __dirname;
-const MIN = process.argv.indexOf('-p') >= 0 || process.argv.indexOf('--optimize-minimize') >= 0 ? '.min' : '';
 
-let webpack = require('webpack');
+// const PROD = process.argv.indexOf('-p') >= 0 || process.argv.indexOf('--optimize-minimize') >= 0;
+// const ENV = PROD ? 'production' : 'development';
+// const MIN = PROD ? '.min' : '';
 
 let extensions = [
-	// PATH.join('xiewulong', 'yii2-account'),
-	// PATH.join('xiewulong', 'yii2-attachment'),
-	// PATH.join('xiewulong', 'yii2-xui'),
+	// PATH.join('extensionPath', 'extensionName'),
 ];
 
 let configs = [];
 let configRegister = (path) => {
 	let configFile = PATH.join(path, 'webpack.config.js');
 	if(!FS.existsSync(configFile)) return;
+
 	let config = require(configFile);
 	config.name = path;
-	config.plugins.push(new webpack.DefinePlugin({ENV: JSON.stringify(path)}));
 	configs.push(config);
 }
 

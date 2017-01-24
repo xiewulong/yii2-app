@@ -21,7 +21,7 @@ return [
 			'identityClass' => 'common\models\User',
 			'enableAutoLogin' => false,
 			'identityCookie' => ['name' => '_identity', 'httpOnly' => true],
-			'loginUrl' => ['account/user/login'],
+			'loginUrl' => ['account/'],
 			// 'authTimeout' => 60 * 60,
 		],
 		'session' => [
